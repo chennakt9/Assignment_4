@@ -8,29 +8,34 @@ start_time = time.time()
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((socket.gethostname(), 12345))
 
-#some change added
 
-file  = open('Downloads/test.txt', 'w')
+books = ["test1","text2","text3","text4","text5"]
 
-while True:
-    data = client.recv(2**17)
-    if len(data) <= 0:
-        break
-
-    # print(data)
-    dcdmsg = data.decode("utf-8", "ignore")
-
-    print(len(dcdmsg))
+for book_name in books:
     
-    file.write(dcdmsg)
+    client.send(bytes(book_name,"utf-8"))
 
-client.close()
+    file = open(f"{book_name}TCP{os.getpid()}.txt", 'w', encoding = 'utf-8')
 
-end_time = time.time()
+    while True:
+        data = client.recv(2**17)
+        if len(data) <= 0:
+            break
 
-time_diff = end_time - start_time
+        # print(data)
+        dcdmsg = data.decode("utf-8", "ignore")
 
-print(f"time diff in seconds : {round(time_diff,2)} s")
+
+        
+        file.write(dcdmsg)
+
+    client.close()
+
+    end_time = time.time()
+
+    time_diff = end_time - start_time
+
+    print(f"{book_name} => time diff in seconds : {round(time_diff,2)} s")
 
 
 
