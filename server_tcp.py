@@ -16,7 +16,7 @@ server.listen(1)
 BUFFER_SIZE = 32
 
 
-
+print("Listening for connections ...")
 
 # FC text2TCP8224.txt ../Texts/text2.txt
 
@@ -32,7 +32,7 @@ while True:
     print("book name : ",book_name)
 
 
-    file = open(f'../Texts/{book_name}.txt', 'r', encoding="utf-8")
+    file = open(f'Texts/{book_name}.txt', 'r', encoding="utf-8")
     
     
 

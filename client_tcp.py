@@ -10,7 +10,8 @@ client.connect((socket.gethostname(), 12345))
 
 
 
-file  = open('Downloads/')
+file  = open('Downloads/test.txt', 'w')
+
 while True:
     data = client.recv(2**17)
     if len(data) <= 0:
