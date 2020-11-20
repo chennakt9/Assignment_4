@@ -8,7 +8,7 @@ start_time = time.time()
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((socket.gethostname(), 12345))
 
-
+#some change added
 
 file  = open('Downloads/test.txt', 'w')
 
