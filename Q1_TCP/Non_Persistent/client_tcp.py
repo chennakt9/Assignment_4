@@ -37,10 +37,14 @@ for book_name in books:
 
         
         file.write(dcdmsg)
+        
     file.close()
+    dwnld_end = time.time()
+
+
     client.close()
 
-    dwnld_end = time.time()
+    
 
 
 

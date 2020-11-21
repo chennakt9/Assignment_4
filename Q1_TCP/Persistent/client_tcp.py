@@ -22,8 +22,6 @@ print(f"conn time : {conn_end - conn_start}")
 
 for book_name in books:
     
-
-
     client.send(bytes(book_name,"utf-8"))
     print(book_name)
     dwnld_start = time.time()
@@ -49,8 +47,6 @@ for book_name in books:
 
     dwnld_end = time.time()
 
-
-
     dwnld_times[book_name] = dwnld_end - dwnld_start
 
     
@@ -61,7 +57,7 @@ for book in dwnld_times:
     
     t = round(dwnld_times[book],2)
     s = os.path.getsize(f"../../Texts/{book}.txt")
-    print(f"{book} => : {t} s : throughput : {(s/1024)/t} MBps")
+    print(f"{book} => : {t} s : throughput : {(s/(2**20))/t} MBps")
 
 
 
