@@ -1,19 +1,19 @@
 import socket
 import time
 import os
+import sys
+
+HOST = sys.argv[1]
 
 
-
-
-book_name = "text1"
-
-HOST = '10.0.0.1'
 conn_start = time.time()
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((HOST, 12345))
 conn_end = time.time()
 
 conn_time = conn_end - conn_start
+
+book_name = "text1"
 
 client.send(bytes(book_name,"utf-8"))
 

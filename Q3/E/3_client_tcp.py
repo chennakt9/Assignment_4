@@ -1,19 +1,20 @@
 import socket
 import time
 import os
+import sys
+
+HOST = sys.argv[1]
 
 
-
-
-book_name = "text3"
 
 conn_start = time.time()
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((socket.gethostname(), 12345))
+client.connect((HOST, 12345))
 conn_end = time.time()
 
 conn_time = conn_end - conn_start
 
+book_name = "text3"
 client.send(bytes(book_name,"utf-8"))
 
 dwnld_start = time.time()
@@ -42,7 +43,7 @@ client.close()
 dwnld_time = round(dwnld_end - dwnld_start,2)
 
 print("\n ---  Download time setup times --- ")
-s = os.path.getsize(f"../../../Texts/{book_name}.txt")
+s = os.path.getsize(f"../../Texts/{book_name}.txt")
 print(f"{book_name} => : {dwnld_time} s : throughput : {(s/1024)/dwnld_time} MBps")
 
 

@@ -1,11 +1,12 @@
 import socket
 import time
 import threading
+import sys
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
-HOST = '10.0.0.1'
+HOST = sys.argv[1]
 server.bind((HOST, 12345))
 
 
