@@ -27,7 +27,7 @@ class LinearTopo(Topo):
            host = self.addHost('h%s' % i)
            
 
-           self.addLink( host, switch, self.bw)
+           self.addLink( host, switch, bw = self.bw)
            # 10 Mbps, 5ms delay, 1% loss, 1000 packet queue
         #    self.addLink( host, switch, bw=10, delay='5ms', loss=1, max_queue_size=1000, use_htb=True)
             
