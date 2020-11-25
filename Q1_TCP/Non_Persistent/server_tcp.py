@@ -31,7 +31,7 @@ while True:
     print("book name : ",book_name)
 
 
-    file = open(f'../Texts/{book_name}.txt', 'r', encoding="utf-8")
+    file = open(f'../../Texts/{book_name}.txt', 'r', encoding="utf-8")
     
     
 
