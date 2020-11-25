@@ -45,7 +45,7 @@ dwnld_time = round(dwnld_end - dwnld_start,2)
 
 print("\n ---  Download time setup times --- ")
 s = os.path.getsize(f"../../Texts/{book_name}.txt")
-print(f"{book_name} => : {dwnld_time} s : throughput : {(s/1024)/dwnld_time} MBps")
+print(f"{book_name} => : {dwnld_time} s : throughput : {(s/(2**20))/dwnld_time} MBps")
 
 
 

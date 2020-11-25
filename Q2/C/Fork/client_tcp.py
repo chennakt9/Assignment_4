@@ -56,7 +56,7 @@ print(" ---  Download time & Throughput --- ")
 for book in dwnld_times:
     
     t = round(dwnld_times[book],2)
-    s = os.path.getsize(f"../Texts/{book}.txt")
+    s = os.path.getsize(f"../../../Texts/{book}.txt")
     print(f"{book} => : {t} s : throughput : {(s/(2**20))/t} MBps")
 
 
