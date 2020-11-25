@@ -20,7 +20,7 @@ print(f"Connection from {address} has been established.")
 
 
 def client_handler(clientsocket):
-    file = open(f'../Texts/{book_name}.txt', 'r', encoding="utf-8")
+    file = open(f'../../../Texts/{book_name}.txt', 'r', encoding="utf-8")
 
     while True:
 

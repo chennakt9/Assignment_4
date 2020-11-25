@@ -12,7 +12,7 @@ server.bind((socket.gethostname(), 12345))
 server.listen(1)
 
 
-BUFFER_SIZE = 1024
+BUFFER_SIZE = 32
 
 
 print("Listening for connections ...")

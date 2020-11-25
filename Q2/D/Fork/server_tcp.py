@@ -1,6 +1,7 @@
 import socket
 import time
 import threading
+import os
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -48,11 +49,11 @@ while True:
 
     print("book name : ",book_name)
 
-    t1 = threading.Thread(target=client_handler,
-        args=(clientsocket,)
-    )
-    
-    t1.start()
+    child_pid = os.fork()
+
+    if child_pid==0:
+        client_handler(clientsocket)
+        break
 
     
 
